@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=angular.min.js></script>
+</head>
+<body>
+    <!--双向绑定-->
+    <!--双向绑定，在修改输入域的值时， AngularJS 属性的值也将修改：-->
+    <!--定义和用法-->
+    <!--ng-controller 指令用于为你的应用添加控制器。-->
+    <!--在控制器中，你可以编写代码，制作函数和变量，并使用 scope 对象来访问。-->
+    <!--<div ng-app="myApp" ng-controller="myCtrl">-->
+        <!--名字: <input ng-model="name">-->
+        <!--<h1>你输入了: {{name}}</h1>-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--var app = angular.module("myApp", []);-->
+        <!--app.controller("myCtrl", function($scope) {-->
+            <!--$scope.name = "John Doe";-->
+        <!--});-->
+    <!--</script>-->
+    <!--<p>修改输入框的值，标题的名字也会相应修改。</p>-->
+
+    <!--验证用户输入-->
+    <!--<form ng-app="" name="myForm">-->
+        <!--Email:-->
+        <!--<input type="email" name="myAddress" ng-model="text">-->
+        <!--<span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>-->
+    <!--</form>-->
+    <!--<p>在输入框中输入你的邮箱地址，如果不是一个合法的邮箱地址，会弹出提示信息。</p>-->
+    <!--以上实例中，提示信息会在 ng-show 属性返回 true 的情况下显示。-->
+
+    <!--应用状态-->
+    <form ng-app="" name="myForm" ng-init="myText = 'test@runoob.com'">
+
+        Email:
+        <input type="email" name="myAddress" ng-model="myText" required>
+        <p>编辑邮箱地址，查看状态的改变。</p>
+        <h1>状态</h1>
+        <p>Valid: {{myForm.myAddress.$valid}} (如果输入的值是合法的则为 true)。</p>
+        <p>Dirty: {{myForm.myAddress.$dirty}} (如果值改变则为 true)。</p>
+        <p>Touched: {{myForm.myAddress.$touched}} (如果通过触屏点击则为 true)。</p>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=angular.min.js></script>
+</head>
+<body>
+    <!--<div ng-app="" ng-init="firstName='John'">-->
+
+        <!--<p>姓名为 <span ng-bind="firstName"></span></p>-->
+
+    <!--</div>-->
+    <div data-ng-app="" data-ng-init="SecondName='Michal'">
+        <input ng-model="firstValue"><label>*</label><input ng-model="secondValue">
+        <label>结果为：{{firstValue*secondValue}}</label>
+        <p>姓名为 <span data-ng-bind="SecondName"></span></p>
+        <p>我的第一个表达式 {{5 + 5}}</p>
+    </div>
+    <!--ng-app 指令告诉 AngularJS，<div> 元素是 AngularJS 应用程序 的"所有者"。-->
+    <!--ng-model 指令把输入域的值绑定到应用程序变量 name。-->
+    <!--ng-bind 指令把应用程序变量 name 绑定到某个段落的 innerHTML。-->
+    <!--ng-init 指令初始化 AngularJS 应用程序变量-->
+    <!-- ng-app相当于java的mian 入口方法，一个程序只能有一个ng-app-->
+</body>
+</html>
