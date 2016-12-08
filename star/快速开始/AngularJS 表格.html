@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <style>
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        /*table tr:nth-child(odd)	{
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }*/
+    </style>
+</head>
+<body>
+    <!--ng-repeat 指令可以完美的显示表格。
+    在表格中显示数据
+    使用 angular 显示表格是非常简单的：-->
+    <!--<div ng-app="myApp" ng-controller="customersCtrl">
+        <table>
+            <tr ng-repeat="x in names">
+                <td>{{ x.site }}</td>
+                <td>{{ x.url}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function($scope) {
+            $scope.names = [
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"},
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"}
+            ];
+        });
+    </script>-->
+
+    <!--使用 orderBy 过滤器
+    排序显示，可以使用 orderBy 过滤器:-->
+    <!--<div ng-app="myApp" ng-controller="customersCtrl">
+        <table>
+            <tr ng-repeat="x in names | orderBy : 'site'">
+                <td>{{ x.site }}</td>
+                <td>{{ x.url }}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function($scope, $http) {
+            $scope.names = [
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"},
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"}
+            ];
+        });
+    </script>-->
+
+    <!--使用 uppercase 过滤器
+    使用 uppercase 过滤器转换为大写:-->
+    <!--<div ng-app="myApp" ng-controller="customersCtrl">
+        <table>
+            <tr ng-repeat="x in names | orderBy : 'site'">
+                <td>{{ x.site }}</td>
+                <td>{{ x.url | uppercase  }}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function($scope, $http) {
+            $scope.names = [
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"},
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"}
+            ];
+        });
+    </script>-->
+
+    <!--显示序号 ($index)
+    表格显示序号可以在 <td> 中添加 $index:-->
+    <!--<div ng-app="myApp" ng-controller="customersCtrl">
+        <table>
+            <tr ng-repeat="x in names | orderBy : 'site'">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ x.site }}</td>
+                <td>{{ x.url | uppercase  }}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function($scope, $http) {
+            $scope.names = [
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"},
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"}
+            ];
+        });
+    </script>-->
+
+    <!--使用 $even 和 $odd-->
+    <div ng-app="myApp" ng-controller="customersCtrl">
+        <table>
+            <tr ng-repeat="x in names">
+                <td ng-if="$odd" style="background-color:#f1f1f1">{{ $index + 1 }}</td>
+                <td ng-if="$even">{{ $index + 1 }}</td>
+                <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.site }}</td>
+                <td ng-if="$even">{{ x.site }}</td>
+                <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.url }}</td>
+                <td ng-if="$even">{{ x.url }}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function($scope, $http) {
+            $scope.names = [
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"},
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"}
+            ];
+        });
+    </script>
+</body>
+</html>
